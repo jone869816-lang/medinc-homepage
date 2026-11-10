@@ -217,7 +217,9 @@ header.top.solid{background:var(--paper);color:var(--ink);border-bottom-color:va
 .letter .bodytext{display:grid;gap:1.4rem;max-width:36rem;font-family:var(--f-kr);font-weight:300;font-size:1.08rem;line-height:1.95;color:#2A2826}
 .letter .bodytext.en{font-family:var(--f-didone);font-size:1.3rem;line-height:1.55}
 .letter .bodytext p:first-child::first-letter{font-family:var(--f-didone);float:left;font-size:4.6em;line-height:.82;padding:.06em .12em 0 0;color:var(--orange)}
-.letter .sign{font-family:var(--f-logo);font-size:2.2rem}
+.letter .sign{font-family:var(--f-logo);font-size:2.2rem;display:flex;align-items:baseline;gap:.6rem;flex-wrap:wrap}
+.letter .sign .team{font-family:var(--f-kr);font-size:1rem;font-weight:400;letter-spacing:.02em;font-style:normal}
+.letter .sign .team.en{font-family:var(--f-logo);font-size:2.2rem;letter-spacing:0}
 @media (max-width:820px){.letter{grid-template-columns:1fr;gap:2rem}}
 
 /* ---------- 백커버 ---------- */
@@ -575,9 +577,9 @@ footer .big{font-size:clamp(5rem,27vw,27rem);line-height:.78;text-align:center;m
     <div><p class="cap" style="color:var(--grey);margin-bottom:1.4rem">Letter from the editor</p><h2>Make it<br><em>iconic.</em></h2></div>
     <div>
       <div class="bodytext ko">
-        <p>좋은 진료는 이미 하고 계십니다. 환자가 그 사실을 알아보기까지의 거리가 문제일 뿐입니다.</p>
-        <p>메디앤씨는 그 거리를 디자인합니다. 첫 검색에서 보이는 사진 한 장, 홈페이지의 첫 문장, 대기실 배너의 서체까지. 하나의 결로 이어질 때 병원은 동네 의원이 아니라 이름 있는 브랜드가 됩니다.</p>
-        <p>그리고 그 모든 과정을 차트에 남깁니다. 화려하게 시작해서 흐지부지 끝나는 마케팅은 하지 않습니다.</p>
+        <p>좋은 진료는 이미 하고 계십니다.<br>환자가 그 사실을 알아보기까지의 거리가 문제일 뿐입니다.</p>
+        <p>메디앤씨는 그 거리를 디자인합니다.<br>첫 검색에서 보이는 사진 한 장, 홈페이지의 첫 문장, 대기실 배너의 서체까지.<br>하나의 결로 이어질 때 병원은 동네 의원이 아니라 이름 있는 브랜드가 됩니다.</p>
+        <p>그리고 그 모든 과정을 차트에 남깁니다.<br>화려하게 시작해서 흐지부지 끝나는 마케팅은 하지 않습니다.</p>
       </div>
       <div class="bodytext en">
         <p>You already deliver great care. The only question is how far a patient has to travel before they notice.</p>
@@ -599,7 +601,7 @@ footer .big{font-size:clamp(5rem,27vw,27rem);line-height:.78;text-align:center;m
         <p>Medi&C 設計的正是這段距離——搜尋結果裡的第一張照片、官網的第一句話、候診區橫幅的字體。當每一處都以同一種語氣呈現，診所便不再只是社區診所，而是一個有名字的品牌。</p>
         <p>我們也會把每一步記錄在進度表上。不做開頭轟轟烈烈、最後不了了之的行銷。</p>
       </div>
-      <p class="sign" style="margin-top:2rem">— Medi<i style="color:var(--orange);font-style:normal">&amp;</i>C</p>
+      <p class="sign" style="margin-top:2rem">— Medi<i style="color:var(--orange);font-style:normal">&amp;</i>C <span class="team ko">전직원 일동</span><span class="team en">Team</span><span class="team ja">スタッフ一同</span><span class="team sc">全体员工</span><span class="team tc">全體同仁</span></p>
     </div>
   </div>
 
