@@ -288,6 +288,14 @@ legend{font:500 .64rem/1 var(--f-sans);letter-spacing:.18em;text-transform:upper
 .notice{font-family:var(--f-kr);font-size:.9rem;padding:1.2rem;background:var(--sand)}
 .notice pre{white-space:pre-wrap;font:400 .78rem/1.6 ui-monospace,Menlo,monospace;color:var(--grey);margin:.8rem 0;max-height:12rem;overflow:auto}
 
+/* 하위 페이지 돌아가기 */
+.backlink{display:inline-flex;align-items:center;gap:.5rem;text-decoration:none;font:500 .7rem/1 var(--f-sans);letter-spacing:.18em;text-transform:uppercase;color:var(--ink);padding:.6rem 0;margin-bottom:.4rem;align-self:flex-start}
+.backlink:hover{color:var(--orange)}
+.pager{display:flex;justify-content:space-between;align-items:center;gap:1.5rem;flex-wrap:wrap;padding-block:2.4rem 3rem;border-top:1px solid var(--ink)}
+.pager .next{display:grid;gap:.4rem;justify-items:end;text-decoration:none;text-align:right}
+.pager .nm{font-family:var(--f-didone);font-size:clamp(1.8rem,3.4vw,2.8rem);line-height:1;font-style:italic}
+.pager .next:hover .nm{color:var(--orange)}
+
 /* ================= MOBILE EDITION ================= */
 /* 커버 위에서는 헤더 로고를 숨겨 제호와 중복되지 않게 */
 header.top:not(.solid) .logo{opacity:0;pointer-events:none}
@@ -608,7 +616,7 @@ footer .big{font-size:clamp(5rem,27vw,27rem);line-height:.78;text-align:center;m
 <!-- ================= SERVICES ================= -->
 <section data-page="services" hidden>
   <div class="opener">
-    <div class="txt"><p class="cap" style="color:var(--grey)">Services · Nº 01</p><h1>Cut to<br><em>measure.</em></h1>
+    <div class="txt"><a class="backlink" href="#home" data-back><span aria-hidden="true">←</span> <span class="ko">커버로 돌아가기</span><span class="en">Back to cover</span><span class="ja">カバーに戻る</span><span class="sc">返回封面</span><span class="tc">返回封面</span></a><p class="cap" style="color:var(--grey)">Services · Nº 01</p><h1>Cut to<br><em>measure.</em></h1>
       <p class="kr ko">필요한 항목만 골라 계약하세요. 모든 서비스는 항목 코드와 수량으로 계약되고, 계약한 만큼 실행하고 보고합니다.</p>
       <p class="kr en">Choose only what you need. Every service is contracted by item and quantity, delivered and reported as signed.</p><p class="kr ja">必要な項目だけをお選びください。すべてのサービスは項目と数量で契約し、契約どおりに実行・報告します。</p><p class="kr sc">只选您需要的项目。所有服务按项目与数量签约，签多少、做多少、报多少。</p><p class="kr tc">只選您需要的項目。所有服務按項目與數量簽約，簽多少、做多少、報多少。</p></div>
     <div class="img"><div class="ph t-sand"><img data-src="img/10-services.jpg" alt=""></div><span class="slot">img/10-services.jpg</span></div>
@@ -646,12 +654,14 @@ footer .big{font-size:clamp(5rem,27vw,27rem);line-height:.78;text-align:center;m
       </ul></div>
   </div>
   <div class="back wrap"><h2>Your clinic,<br><em>in couture.</em></h2><a class="btn" href="#contact"><span class="ko">무료 진단 신청</span><span class="en">Book a review</span><span class="ja">無料診断を申し込む</span><span class="sc">预约免费诊断</span><span class="tc">預約免費診斷</span> →</a></div>
+
+  <nav class="pager wrap" aria-label="Pages"><a class="backlink" href="#home" data-back><span aria-hidden="true">←</span> <span class="ko">커버로 돌아가기</span><span class="en">Back to cover</span><span class="ja">カバーに戻る</span><span class="sc">返回封面</span><span class="tc">返回封面</span></a><a class="next" href="#process"><span class="cap" style="color:var(--grey)">Next</span><span class="nm">Process <span aria-hidden="true">→</span></span></a></nav>
 </section>
 
 <!-- ================= PROCESS ================= -->
 <section data-page="process" hidden>
   <div class="opener">
-    <div class="txt"><p class="cap" style="color:var(--grey)">Process · Nº 02</p><h1>On<br><em>record.</em></h1>
+    <div class="txt"><a class="backlink" href="#home" data-back><span aria-hidden="true">←</span> <span class="ko">커버로 돌아가기</span><span class="en">Back to cover</span><span class="ja">カバーに戻る</span><span class="sc">返回封面</span><span class="tc">返回封面</span></a><p class="cap" style="color:var(--grey)">Process · Nº 02</p><h1>On<br><em>record.</em></h1>
       <p class="kr ko">첫 상담부터 월간 보고까지 다섯 단계. 모든 단계가 기록으로 남습니다.</p>
       <p class="kr en">Five steps from first call to monthly report, every one of them on record.</p><p class="kr ja">初回相談から月次レポートまで5ステップ。すべての工程が記録に残ります。</p><p class="kr sc">从首次咨询到月度报告共五步，每一步都有记录。</p><p class="kr tc">從首次諮詢到月度報告共五步，每一步都有紀錄。</p></div>
     <div class="img"><div class="ph t-stone"><img data-src="img/11-process.jpg" alt=""></div><span class="slot">img/11-process.jpg</span></div>
@@ -665,12 +675,14 @@ footer .big{font-size:clamp(5rem,27vw,27rem);line-height:.78;text-align:center;m
       <li><span class="n">05</span><div><h3 class="ko">월간 보고</h3><h3 class="en">Monthly report</h3><h3 class="ja">月次レポート</h3><h3 class="sc">月度报告</h3><h3 class="tc">月度報告</h3></div><p class="ko">계약 대비 완료 현황, 결과물 링크, 다음 달 제안을 함께 보내드립니다.</p><p class="en">Completion against contract, links to every deliverable, next month's proposal.</p><p class="ja">契約に対する完了状況、成果物リンク、翌月のご提案をお送りします。</p><p class="sc">发送对照合同的完成情况、成果链接与下月提案。</p><p class="tc">發送對照合約的完成情況、成果連結與下月提案。</p></li>
     </ol>
   </div>
+
+  <nav class="pager wrap" aria-label="Pages"><a class="backlink" href="#home" data-back><span aria-hidden="true">←</span> <span class="ko">커버로 돌아가기</span><span class="en">Back to cover</span><span class="ja">カバーに戻る</span><span class="sc">返回封面</span><span class="tc">返回封面</span></a><a class="next" href="#global"><span class="cap" style="color:var(--grey)">Next</span><span class="nm">Global <span aria-hidden="true">→</span></span></a></nav>
 </section>
 
 <!-- ================= GLOBAL ================= -->
 <section data-page="global" hidden>
   <div class="opener">
-    <div class="txt"><p class="cap" style="color:var(--grey)">Global · EN · JA · ZH</p><h1>Across<br><em>borders.</em></h1>
+    <div class="txt"><a class="backlink" href="#home" data-back><span aria-hidden="true">←</span> <span class="ko">커버로 돌아가기</span><span class="en">Back to cover</span><span class="ja">カバーに戻る</span><span class="sc">返回封面</span><span class="tc">返回封面</span></a><p class="cap" style="color:var(--grey)">Global · EN · JA · ZH</p><h1>Across<br><em>borders.</em></h1>
       <p class="kr ko">검색 언어, 쓰는 앱, 믿는 후기가 나라마다 다릅니다. 국가별 경로에 맞춰 병원을 다시 소개합니다.</p>
       <p class="kr en">Search language, apps and trusted reviews differ by country. We reintroduce your clinic for each market.</p><p class="kr ja">検索する言語も、使うアプリも、信頼する口コミも国ごとに違います。国別の経路に合わせて、クリニックを紹介し直します。</p><p class="kr sc">搜索语言、常用App、信赖的评价因国家而异。我们按各国路径重新介绍您的诊所。</p><p class="kr tc">搜尋語言、常用App、信賴的評價因國家而異。我們按各國路徑重新介紹您的診所。</p></div>
     <div class="img"><div class="ph t-sky"><img data-src="img/12-global.jpg" alt=""></div><span class="slot">img/12-global.jpg</span></div>
@@ -683,12 +695,14 @@ footer .big{font-size:clamp(5rem,27vw,27rem);line-height:.78;text-align:center;m
       <div><p class="cap" style="color:var(--grey)">GL-04</p><h3><em>One chart</em></h3><p class="kt ko">국내와 한 차트로</p><p class="ko">해외 항목도 같은 진행 차트에서 관리합니다. 국내와 해외가 따로 움직이지 않습니다.</p><p class="en">International items live in the same chart, so both sides move together.</p><p class="ja">海外項目も同じ進捗チャートで管理。国内と海外がばらばらに動きません。</p><p class="sc">海外项目也在同一张进度表中管理，国内与海外同步推进。</p><p class="tc">海外項目也在同一張進度表中管理，國內與海外同步推進。</p></div>
     </div>
   </div>
+
+  <nav class="pager wrap" aria-label="Pages"><a class="backlink" href="#home" data-back><span aria-hidden="true">←</span> <span class="ko">커버로 돌아가기</span><span class="en">Back to cover</span><span class="ja">カバーに戻る</span><span class="sc">返回封面</span><span class="tc">返回封面</span></a><a class="next" href="#contact"><span class="cap" style="color:var(--grey)">Next</span><span class="nm">Contact <span aria-hidden="true">→</span></span></a></nav>
 </section>
 
 <!-- ================= CONTACT ================= -->
 <section data-page="contact" hidden>
   <div class="opener" style="min-height:70svh">
-    <div class="txt"><p class="cap" style="color:var(--grey)">Contact</p><h1>Tell us<br>about your <em>clinic.</em></h1>
+    <div class="txt"><a class="backlink" href="#home" data-back><span aria-hidden="true">←</span> <span class="ko">커버로 돌아가기</span><span class="en">Back to cover</span><span class="ja">カバーに戻る</span><span class="sc">返回封面</span><span class="tc">返回封面</span></a><p class="cap" style="color:var(--grey)">Contact</p><h1>Tell us<br>about your <em>clinic.</em></h1>
       <p class="kr ko">영업일 기준 하루 안에 담당자가 연락드립니다.</p><p class="kr en">A manager will reply within one business day.</p><p class="kr ja">営業日1日以内に担当者よりご連絡いたします。</p><p class="kr sc">我们将在一个工作日内与您联系。</p><p class="kr tc">我們將在一個工作日內與您聯繫。</p></div>
     <div class="img"><div class="ph t-cover"><img data-src="img/13-contact.jpg" alt=""></div><span class="slot">img/13-contact.jpg</span></div>
   </div>
@@ -733,6 +747,8 @@ footer .big{font-size:clamp(5rem,27vw,27rem);line-height:.78;text-align:center;m
       </form>
     </div>
   </div>
+
+  <nav class="pager wrap" aria-label="Pages"><a class="backlink" href="#home" data-back><span aria-hidden="true">←</span> <span class="ko">커버로 돌아가기</span><span class="en">Back to cover</span><span class="ja">カバーに戻る</span><span class="sc">返回封面</span><span class="tc">返回封面</span></a><a class="next" href="#services"><span class="cap" style="color:var(--grey)">Next</span><span class="nm">Services <span aria-hidden="true">→</span></span></a></nav>
 </section>
 </main>
 
@@ -764,11 +780,14 @@ footer .big{font-size:clamp(5rem,27vw,27rem);line-height:.78;text-align:center;m
   document.addEventListener("keydown",function(e){if(e.key==="Escape")closeLang()});
 
   var top=document.getElementById("top"),mnav=document.getElementById("mnav"),burger=document.getElementById("burger"),page="home";
-  function show(){var id=(location.hash||"#home").slice(1);if(PAGES.indexOf(id)<0)id="home";page=id;
+  var homeY=null;
+  function show(){var id=(location.hash||"#home").slice(1);if(PAGES.indexOf(id)<0)id="home";
+    if(page==="home"&&id!=="home")homeY=window.scrollY;
+    var back=(id==="home"&&page!=="home"&&homeY!==null);page=id;
     document.querySelectorAll("section[data-page]").forEach(function(x){x.hidden=x.dataset.page!==id});
     document.querySelectorAll(".top nav a").forEach(function(a){a.getAttribute("href")==="#"+id?a.setAttribute("aria-current","page"):a.removeAttribute("aria-current")});
     mnav.classList.remove("open");burger.setAttribute("aria-expanded","false");burger.textContent="Menu";
-    window.scrollTo(0,0);measure();tick()}
+    measure();window.scrollTo(0,back?homeY:0);tick()}
   window.addEventListener("hashchange",show);
   burger.addEventListener("click",function(){var o=mnav.classList.toggle("open");burger.setAttribute("aria-expanded",o);burger.textContent=o?"Close":"Menu";top.classList.toggle("solid",o||top.classList.contains("solid"))});
 
