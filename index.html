@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ko">
+<html lang="ko" data-lang="ko">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -10,6 +10,7 @@
 <meta property="og:url" content="https://www.medinc.co.kr/">
 <meta property="og:type" content="website">
 <link rel="canonical" href="https://www.medinc.co.kr/">
+<link rel="alternate" hreflang="ko" href="https://www.medinc.co.kr/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23EE6B1F'/%3E%3Ctext x='16' y='24' font-family='Georgia' font-style='italic' font-size='22' fill='%230B0B0B' text-anchor='middle'%3E%26amp;%3C/text%3E%3C/svg%3E">
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <title>Medi&amp;C 메디앤씨</title>
@@ -17,7 +18,7 @@
 <meta name="description" content="Seen, then chosen. 보이는 병원이 선택받습니다. 메디앤씨는 병원을 하나의 브랜드로 만드는 병원 마케팅 파트너입니다.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..800;1,6..96,400..800&family=Instrument+Serif:ital@0;1&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..800;1,6..96,400..800&family=Instrument+Serif:ital@0;1&family=Noto+Sans+JP:wght@300;400;500&family=Noto+Sans+SC:wght@300;400;500&family=Noto+Sans+TC:wght@300;400;500&display=swap">
 <style>
 /* Pretendard (subset, embedded) */
 @font-face{font-family:"Pretendard";font-weight:300;font-style:normal;font-display:swap;src:url(fonts/Pretendard-Light.subset.woff2) format("woff2")}
@@ -42,8 +43,11 @@ body{background:var(--paper);color:var(--ink);font-family:var(--f-sans);font-siz
 a{color:inherit} p{margin:0} h1,h2,h3{margin:0;font-weight:400;text-wrap:balance}
 :focus-visible{outline:2px solid var(--orange);outline-offset:3px}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
-html[data-lang="en"] .ko{display:none!important}
-html:not([data-lang="en"]) .en{display:none!important}
+html[data-lang]:not([data-lang="ko"]) .ko,html:not([data-lang="en"]) .en,html:not([data-lang="ja"]) .ja,html:not([data-lang="sc"]) .sc,html:not([data-lang="tc"]) .tc{display:none!important}
+:is(.ja,.sc,.tc){font-family:var(--f-kr);font-style:normal;letter-spacing:-.01em}
+html[data-lang="ja"]{--f-kr:"Pretendard","Noto Sans JP","Hiragino Sans",sans-serif}
+html[data-lang="sc"]{--f-kr:"Pretendard","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif}
+html[data-lang="tc"]{--f-kr:"Pretendard","Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
 .wrap{padding-left:var(--gutL);padding-right:var(--gutR)}
 .cap{font-family:var(--f-sans);font-size:.68rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase}
 .didone{font-family:var(--f-didone);font-optical-sizing:auto}
@@ -324,8 +328,11 @@ footer .big{font-size:clamp(5rem,27vw,27rem);line-height:.78;text-align:center;m
     <div class="right cap">
       <a href="#contact" class="hide-m" style="text-decoration:none">Contact</a>
       <div class="lang" role="group" aria-label="Language">
-        <button type="button" id="lang-ko" data-set="ko" aria-pressed="true">KR</button>
-        <button type="button" id="lang-en" data-set="en" aria-pressed="false">EN</button>
+        <button type="button" data-set="ko" aria-pressed="true" lang="ko" title="한국어">KR</button>
+        <button type="button" data-set="en" aria-pressed="false" lang="en" title="English">EN</button>
+        <button type="button" data-set="ja" aria-pressed="false" lang="ja" title="日本語">JP</button>
+        <button type="button" data-set="sc" aria-pressed="false" lang="zh-Hans" title="简体中文">简</button>
+        <button type="button" data-set="tc" aria-pressed="false" lang="zh-Hant" title="繁體中文">繁</button>
       </div>
     </div>
   </div>
@@ -349,11 +356,11 @@ footer .big{font-size:clamp(5rem,27vw,27rem);line-height:.78;text-align:center;m
       <div>
         <h1>Seen,<br>then <em>chosen.</em></h1>
         <p class="kr ko">보이는 병원이 선택받습니다.</p>
-        <p class="kr en">The clinic people see is the clinic they choose.</p>
+        <p class="kr en">The clinic people see is the clinic they choose.</p><p class="kr ja">見つけてもらえるクリニックが、選ばれるクリニックです。</p><p class="kr sc">被看见的诊所，才会被选择。</p><p class="kr tc">被看見的診所，才會被選擇。</p>
       </div>
       <div class="side">
         <p class="ko">개원부터 해외 환자까지,<br>병원을 하나의 브랜드로 만드는 6가지 방법</p>
-        <p class="en">Six ways to turn a clinic into a brand, from opening day to patients abroad</p>
+        <p class="en">Six ways to turn a clinic into a brand, from opening day to patients abroad</p><p class="ja">開院から海外患者まで、クリニックをブランドに変える6つの方法</p><p class="sc">从开业到海外患者，让诊所成为品牌的6种方法</p><p class="tc">從開業到海外患者，讓診所成為品牌的6種方法</p>
         <span class="cap">Scroll to open →</span>
       </div>
     </div>
@@ -375,12 +382,12 @@ footer .big{font-size:clamp(5rem,27vw,27rem);line-height:.78;text-align:center;m
           <div class="p-contents">
             <h2>In this<br><em>issue</em></h2>
             <ol class="toc">
-              <li><span class="cap">01</span><span><span class="k">Ground</span><br><span class="d ko">개원 세팅</span><span class="d en">Opening</span></span><span class="p">p. 08</span></li>
-              <li><span class="cap">02</span><span><span class="k"><em>Frame</em></span><br><span class="d ko">홈페이지</span><span class="d en">Website</span></span><span class="p">p. 14</span></li>
-              <li><span class="cap">03</span><span><span class="k">Signal</span><br><span class="d ko">이벤트·디자인</span><span class="d en">Promotion</span></span><span class="p">p. 22</span></li>
-              <li><span class="cap">04</span><span><span class="k"><em>Voice</em></span><br><span class="d ko">채널 운영</span><span class="d en">Channels</span></span><span class="p">p. 30</span></li>
-              <li><span class="cap">05</span><span><span class="k">Record</span><br><span class="d ko">진행 차트</span><span class="d en">Progress chart</span></span><span class="p">p. 38</span></li>
-              <li><span class="cap">06</span><span><span class="k"><em>Beyond</em></span><br><span class="d ko">해외 마케팅</span><span class="d en">Global</span></span><span class="p">p. 46</span></li>
+              <li><span class="cap">01</span><span><span class="k">Ground</span><br><span class="d ko">개원 세팅</span><span class="d en">Opening</span><span class="d ja">開院</span><span class="d sc">开业</span><span class="d tc">開業</span></span><span class="p">p. 08</span></li>
+              <li><span class="cap">02</span><span><span class="k"><em>Frame</em></span><br><span class="d ko">홈페이지</span><span class="d en">Website</span><span class="d ja">ウェブサイト</span><span class="d sc">官网</span><span class="d tc">官網</span></span><span class="p">p. 14</span></li>
+              <li><span class="cap">03</span><span><span class="k">Signal</span><br><span class="d ko">이벤트·디자인</span><span class="d en">Promotion</span><span class="d ja">プロモーション</span><span class="d sc">活动企划</span><span class="d tc">活動企劃</span></span><span class="p">p. 22</span></li>
+              <li><span class="cap">04</span><span><span class="k"><em>Voice</em></span><br><span class="d ko">채널 운영</span><span class="d en">Channels</span><span class="d ja">チャネル</span><span class="d sc">渠道运营</span><span class="d tc">渠道經營</span></span><span class="p">p. 30</span></li>
+              <li><span class="cap">05</span><span><span class="k">Record</span><br><span class="d ko">진행 차트</span><span class="d en">Progress chart</span><span class="d ja">進捗チャート</span><span class="d sc">进度表</span><span class="d tc">進度表</span></span><span class="p">p. 38</span></li>
+              <li><span class="cap">06</span><span><span class="k"><em>Beyond</em></span><br><span class="d ko">해외 마케팅</span><span class="d en">Global</span><span class="d ja">海外</span><span class="d sc">海外</span><span class="d tc">海外</span></span><span class="p">p. 46</span></li>
             </ol>
           </div>
           <div class="folio cap"><span>Medi&amp;C</span><span>Nº 01</span><span>p. 04</span></div>
@@ -393,9 +400,9 @@ footer .big{font-size:clamp(5rem,27vw,27rem);line-height:.78;text-align:center;m
             <div class="txt">
               <div><span class="num">Nº 01 — Opening</span><h2 class="kw">Ground</h2>
                 <p class="line ko">흔들리지 않는 개원은<br>첫 수가표에서 시작됩니다.</p>
-                <p class="line en">A steady opening begins with the first price list.</p></div>
+                <p class="line en">A steady opening begins with the first price list.</p><p class="line ja">揺るがない開院は、最初の料金表から始まります。</p><p class="line sc">稳健的开业，始于第一份价目表。</p><p class="line tc">穩健的開業，始於第一份價目表。</p></div>
               <div><p class="body ko">수가·이벤트 기획, 채널과 계정, 원내 POP, 응대 동선까지. 문을 열기 전에 기반부터 세웁니다.</p>
-                <p class="body en">Pricing, launch promos, channels, in-clinic POP and the front desk — built before the doors open.</p>
+                <p class="body en">Pricing, launch promos, channels, in-clinic POP and the front desk — built before the doors open.</p><p class="body ja">料金設計、開院キャンペーン、各種チャネル、院内POP、受付動線まで。扉を開く前に、土台から整えます。</p><p class="body sc">价格与开业活动、渠道与账号、院内POP、接待动线——在开门之前先打好基础。</p><p class="body tc">價格與開業活動、渠道與帳號、院內POP、接待動線——在開門之前先打好基礎。</p>
                 <div class="tags"><span>OP-01 Pricing</span><span>OP-02 Channels</span><span>OP-03 POP</span></div></div>
             </div>
           </div>
@@ -408,9 +415,9 @@ footer .big{font-size:clamp(5rem,27vw,27rem);line-height:.78;text-align:center;m
             <div><span class="num" style="color:var(--ink)">Nº 02 — Website</span>
               <h2 class="kw"><em>Frame</em></h2>
               <p class="line ko">홈페이지는 병원의<br>두 번째 진료실입니다.</p>
-              <p class="line en">Your website is your second consulting room.</p>
+              <p class="line en">Your website is your second consulting room.</p><p class="line ja">ウェブサイトは、二つ目の診察室です。</p><p class="line sc">官网，是诊所的第二间诊室。</p><p class="line tc">官網，是診所的第二間診室。</p>
               <p class="body ko" style="margin-top:1.2rem">의료진, 장비, 시술을 환자가 궁금해하는 순서로. 광고가 도착할 랜딩 페이지까지 같은 결로 만듭니다.</p>
-              <p class="body en" style="margin-top:1.2rem">Doctors, equipment and treatments in the order patients ask — landing pages in the same hand.</p>
+              <p class="body en" style="margin-top:1.2rem">Doctors, equipment and treatments in the order patients ask — landing pages in the same hand.</p><p class="body ja" style="margin-top:1.2rem">医師・機器・施術を、患者が知りたい順番に。広告の着地ページまで同じトーンで仕上げます。</p><p class="body sc" style="margin-top:1.2rem">医生、设备、项目，按患者关心的顺序呈现；广告落地页也保持同一格调。</p><p class="body tc" style="margin-top:1.2rem">醫師、設備、療程，按患者關心的順序呈現；廣告落地頁也保持同一格調。</p>
             </div>
             <div class="inset"><div class="ph t-stone"><img data-src="img/02-frame.jpg" alt=""></div><span class="slot">img/02-frame.jpg</span></div>
           </div>
@@ -423,9 +430,9 @@ footer .big{font-size:clamp(5rem,27vw,27rem);line-height:.78;text-align:center;m
             <div class="txt">
               <div><span class="num">Nº 03 — Promotion</span><h2 class="kw">Signal</h2>
                 <p class="line ko">이벤트는 할인이 아니라<br>방문할 이유를 만드는 일입니다.</p>
-                <p class="line en">A promotion isn't a discount. It's a reason to visit.</p></div>
+                <p class="line en">A promotion isn't a discount. It's a reason to visit.</p><p class="line ja">キャンペーンは値引きではなく、来院する理由をつくること。</p><p class="line sc">活动不是打折，而是创造来院的理由。</p><p class="line tc">活動不是打折，而是創造來院的理由。</p></div>
               <div><p class="body ko">시즌과 주력 시술에 맞춘 월간 기획. 플친, 인스타그램, 원내 안내물이 한 장의 화보처럼 이어집니다.</p>
-                <p class="body en">Monthly plans by season and treatment, carried across Kakao, Instagram and print like one editorial.</p>
+                <p class="body en">Monthly plans by season and treatment, carried across Kakao, Instagram and print like one editorial.</p><p class="body ja">季節と主力施術に合わせた月間企画。カカオ、Instagram、院内ツールまで一冊のグラビアのようにつなげます。</p><p class="body sc">按季节与主打项目策划月度活动，Kakao、Instagram与院内物料如同一组画报般连贯。</p><p class="body tc">按季節與主打療程策劃月度活動，Kakao、Instagram與院內物料如同一組畫報般連貫。</p>
                 <div class="tags"><span>EV-01 Plan</span><span>EV-02 Kakao</span><span>EV-03 Instagram</span></div></div>
             </div>
             <div class="img"><div class="ph t-ember"><img data-src="img/03-signal.jpg" alt="" style="object-position:78% 50%"></div><span class="slot">img/03-signal.jpg</span></div>
@@ -440,9 +447,9 @@ footer .big{font-size:clamp(5rem,27vw,27rem);line-height:.78;text-align:center;m
             <div class="txt">
               <div><span class="num">Nº 04 — Channels</span><h2 class="kw"><em>Voice</em></h2>
                 <p class="line ko">원장님의 진료 철학이<br>검색 결과에 남도록.</p>
-                <p class="line en">So your philosophy of care is what search results say.</p></div>
+                <p class="line en">So your philosophy of care is what search results say.</p><p class="line ja">院長の診療哲学が、検索結果に残るように。</p><p class="line sc">让院长的诊疗理念，留在搜索结果里。</p><p class="line tc">讓院長的診療理念，留在搜尋結果裡。</p></div>
               <div><p class="body ko">브랜드 블로그, 체험단, 시술 플랫폼 광고, 평판 모니터링. 채널이 달라도 목소리는 하나로.</p>
-                <p class="body en">Brand blog, reviewers, treatment platforms and reputation monitoring — many channels, one voice.</p>
+                <p class="body en">Brand blog, reviewers, treatment platforms and reputation monitoring — many channels, one voice.</p><p class="body ja">ブランドブログ、体験レビュー、施術プラットフォーム広告、評判モニタリング。チャネルが違っても、声はひとつに。</p><p class="body sc">品牌博客、体验评测、医美平台广告、口碑监测——渠道不同，声音如一。</p><p class="body tc">品牌部落格、體驗評測、醫美平台廣告、口碑監測——渠道不同，聲音如一。</p>
                 <div class="tags"><span>CH-01 Blog</span><span>CH-03 Platforms</span><span>CH-04 Reputation</span></div></div>
             </div>
           </div>
@@ -455,18 +462,18 @@ footer .big{font-size:clamp(5rem,27vw,27rem);line-height:.78;text-align:center;m
             <div class="txt">
               <div><span class="num">Nº 05 — Progress chart</span><h2 class="kw">Record</h2>
                 <p class="line ko">계약한 항목은<br>하나도 사라지지 않습니다.</p>
-                <p class="line en">Nothing you sign for goes missing.</p></div>
+                <p class="line en">Nothing you sign for goes missing.</p><p class="line ja">契約した項目は、ひとつも消えません。</p><p class="line sc">签约的每一项，都不会落下。</p><p class="line tc">簽約的每一項，都不會落下。</p></div>
               <div class="hide-m"><span class="stamp">MEDI&amp;C<br>VERIFIED<br>MONTHLY</span></div>
             </div>
             <div class="txt" style="justify-content:center">
               <div class="order" aria-label="진행 차트 예시">
-                <div class="oh"><strong><span class="ko">진행 차트</span><span class="en">Progress chart</span></strong><span class="cap">Sample · Nov</span></div>
+                <div class="oh"><strong><span class="ko">진행 차트</span><span class="en">Progress chart</span><span class="ja">進捗チャート</span><span class="sc">进度表</span><span class="tc">進度表</span></strong><span class="cap">Sample · Nov</span></div>
                 <table>
-                  <tr style="--r:1"><td class="c">OP-01</td><td><span class="ko">오픈 세팅 · 수가표</span><span class="en">Opening · price list</span></td><td class="q done">DONE</td></tr>
-                  <tr style="--r:2"><td class="c">WB-01</td><td><span class="ko">홈페이지 국문</span><span class="en">Website · Korean</span></td><td class="q done">DONE</td></tr>
-                  <tr style="--r:3"><td class="c">WB-02</td><td><span class="ko">홈페이지 영문</span><span class="en">Website · English</span></td><td class="q">IN PROGRESS</td></tr>
-                  <tr style="--r:4"><td class="c">EV-03</td><td><span class="ko">월 이벤트 디자인</span><span class="en">Monthly promo design</span></td><td class="q">2 / 3</td></tr>
-                  <tr style="--r:5"><td class="c">CH-02</td><td><span class="ko">블로그 체험단</span><span class="en">Blog reviewers</span></td><td class="q">9 / 15</td></tr>
+                  <tr style="--r:1"><td class="c">OP-01</td><td><span class="ko">오픈 세팅 · 수가표</span><span class="en">Opening · price list</span><span class="ja">開院 · 料金表</span><span class="sc">开业 · 价目表</span><span class="tc">開業 · 價目表</span></td><td class="q done">DONE</td></tr>
+                  <tr style="--r:2"><td class="c">WB-01</td><td><span class="ko">홈페이지 국문</span><span class="en">Website · Korean</span><span class="ja">ウェブサイト · 韓国語</span><span class="sc">官网 · 韩文</span><span class="tc">官網 · 韓文</span></td><td class="q done">DONE</td></tr>
+                  <tr style="--r:3"><td class="c">WB-02</td><td><span class="ko">홈페이지 영문</span><span class="en">Website · English</span><span class="ja">ウェブサイト · 英語</span><span class="sc">官网 · 英文</span><span class="tc">官網 · 英文</span></td><td class="q">IN PROGRESS</td></tr>
+                  <tr style="--r:4"><td class="c">EV-03</td><td><span class="ko">월 이벤트 디자인</span><span class="en">Monthly promo design</span><span class="ja">月間キャンペーンデザイン</span><span class="sc">月度活动设计</span><span class="tc">月度活動設計</span></td><td class="q">2 / 3</td></tr>
+                  <tr style="--r:5"><td class="c">CH-02</td><td><span class="ko">블로그 체험단</span><span class="en">Blog reviewers</span><span class="ja">ブログ体験レビュー</span><span class="sc">博客体验评测</span><span class="tc">部落格體驗評測</span></td><td class="q">9 / 15</td></tr>
                 </table>
                 <div class="of cap"><span>Total</span><span>62%</span></div>
                 <div class="bar"><span></span></div>
@@ -482,9 +489,9 @@ footer .big{font-size:clamp(5rem,27vw,27rem);line-height:.78;text-align:center;m
             <div class="txt">
               <div><span class="num">Nº 06 — Global</span><h2 class="kw"><em>Beyond</em></h2>
                 <p class="line ko">국경 밖의 환자도<br>같은 진료실로.</p>
-                <p class="line en">Patients from abroad, into the same room.</p></div>
+                <p class="line en">Patients from abroad, into the same room.</p><p class="line ja">海外の患者さまも、同じ診察室へ。</p><p class="line sc">海外患者，也走进同一间诊室。</p><p class="line tc">海外患者，也走進同一間診室。</p></div>
               <div><p class="body ko">영어·일본어·중국어 홈페이지, 해외 채널, 외국인 환자 응대 자료까지. 국내와 같은 차트에서 관리합니다.</p>
-                <p class="body en">English, Japanese and Chinese sites, overseas channels and patient materials, in the same chart as domestic work.</p>
+                <p class="body en">English, Japanese and Chinese sites, overseas channels and patient materials, in the same chart as domestic work.</p><p class="body ja">英語・日本語・中国語サイト、海外チャネル、外国人患者向け資料まで。国内と同じチャートで管理します。</p><p class="body sc">英、日、中文官网，海外渠道，外籍患者接待资料——与国内项目在同一张进度表中管理。</p><p class="body tc">英、日、中文官網，海外渠道，外籍患者接待資料——與國內項目在同一張進度表中管理。</p>
                 <div class="tags"><span>EN</span><span>JA</span><span>ZH</span></div></div>
             </div>
             <div class="img"><div class="ph t-sky"><img data-src="img/06-beyond.jpg" alt="" style="object-position:62% 50%"></div><span class="slot">img/06-beyond.jpg</span></div>
@@ -510,6 +517,21 @@ footer .big{font-size:clamp(5rem,27vw,27rem);line-height:.78;text-align:center;m
         <p>We design that distance — the first photo in search, the first line on your website, the typeface on the waiting-room banner. When every piece speaks in one hand, a clinic stops being a local practice and becomes a name.</p>
         <p>And we keep every step on record. No marketing that starts loud and fades out.</p>
       </div>
+      <div class="bodytext ja">
+        <p>すでに良い診療をされています。問題は、患者がそれに気づくまでの距離だけです。</p>
+        <p>メディアンドシーはその距離をデザインします。検索で最初に目にする一枚の写真、ウェブサイトの最初の一文、待合室バナーの書体まで。すべてがひとつのトーンでつながったとき、クリニックは街の医院ではなく、名のあるブランドになります。</p>
+        <p>そして、そのすべての過程をチャートに残します。華やかに始まって、いつの間にか消えるマーケティングはしません。</p>
+      </div>
+      <div class="bodytext sc">
+        <p>您早已提供优秀的诊疗。问题只在于，患者要走多远才会注意到。</p>
+        <p>Medi&C 设计的正是这段距离——搜索结果里的第一张照片、官网的第一句话、候诊区横幅的字体。当每一处都以同一种语气呈现，诊所便不再只是社区诊所，而是一个有名字的品牌。</p>
+        <p>我们也会把每一步记录在进度表上。不做开头轰轰烈烈、最后不了了之的营销。</p>
+      </div>
+      <div class="bodytext tc">
+        <p>您早已提供優秀的診療。問題只在於，患者要走多遠才會注意到。</p>
+        <p>Medi&C 設計的正是這段距離——搜尋結果裡的第一張照片、官網的第一句話、候診區橫幅的字體。當每一處都以同一種語氣呈現，診所便不再只是社區診所，而是一個有名字的品牌。</p>
+        <p>我們也會把每一步記錄在進度表上。不做開頭轟轟烈烈、最後不了了之的行銷。</p>
+      </div>
       <p class="sign" style="margin-top:2rem">— Medi<i style="color:var(--orange);font-style:normal">&amp;</i>C</p>
     </div>
   </div>
@@ -519,8 +541,8 @@ footer .big{font-size:clamp(5rem,27vw,27rem);line-height:.78;text-align:center;m
     <p class="cap">Free 30-minute review</p>
     <h2>Your clinic,<br><em>in couture.</em></h2>
     <p class="kr ko">병원에 맞춤 재단한 브랜딩. 30분 무료 진단으로 시작하세요.</p>
-    <p class="kr en">Branding cut to measure for your clinic. Start with a free 30-minute review.</p>
-    <a class="btn" href="#contact"><span class="ko">무료 진단 신청</span><span class="en">Book a review</span> →</a>
+    <p class="kr en">Branding cut to measure for your clinic. Start with a free 30-minute review.</p><p class="kr ja">クリニックのために仕立てるブランディング。まずは30分の無料診断から。</p><p class="kr sc">为诊所量身剪裁的品牌打造。从30分钟免费诊断开始。</p><p class="kr tc">為診所量身剪裁的品牌打造。從30分鐘免費診斷開始。</p>
+    <a class="btn" href="#contact"><span class="ko">무료 진단 신청</span><span class="en">Book a review</span><span class="ja">無料診断を申し込む</span><span class="sc">预约免费诊断</span><span class="tc">預約免費診斷</span> →</a>
   </div>
 </section>
 
@@ -529,40 +551,40 @@ footer .big{font-size:clamp(5rem,27vw,27rem);line-height:.78;text-align:center;m
   <div class="opener">
     <div class="txt"><p class="cap" style="color:var(--grey)">Services · Nº 01</p><h1>Cut to<br><em>measure.</em></h1>
       <p class="kr ko">필요한 항목만 골라 계약하세요. 모든 서비스는 항목 코드와 수량으로 계약되고, 계약한 만큼 실행하고 보고합니다.</p>
-      <p class="kr en">Choose only what you need. Every service is contracted by item and quantity, delivered and reported as signed.</p></div>
+      <p class="kr en">Choose only what you need. Every service is contracted by item and quantity, delivered and reported as signed.</p><p class="kr ja">必要な項目だけをお選びください。すべてのサービスは項目と数量で契約し、契約どおりに実行・報告します。</p><p class="kr sc">只选您需要的项目。所有服务按项目与数量签约，签多少、做多少、报多少。</p><p class="kr tc">只選您需要的項目。所有服務按項目與數量簽約，簽多少、做多少、報多少。</p></div>
     <div class="img"><div class="ph t-sand"><img data-src="img/10-services.jpg" alt=""></div><span class="slot">img/10-services.jpg</span></div>
   </div>
   <div class="sect wrap">
     <div class="svc"><div><p class="cap" style="color:var(--grey)">OP</p><h3>Opening</h3><p class="kt ko">개원 세팅</p></div>
       <ul>
-        <li><span>OP-01</span><p class="ko">수가표·이벤트 기획<small>지역 시세와 주력 시술 기준</small></p><p class="en">Price list & launch promos<small>Local rates and key treatments</small></p></li>
-        <li><span>OP-02</span><p class="ko">채널·계정 세팅<small>플레이스, 카카오 채널, 인스타그램, 플랫폼 입점</small></p><p class="en">Channels & accounts<small>Naver Place, Kakao, Instagram, platforms</small></p></li>
-        <li><span>OP-03</span><p class="ko">원내 POP·인쇄물<small>배너, 시술 안내, 대기실 비치물</small></p><p class="en">In-clinic POP & print<small>Banners, guides, waiting room</small></p></li>
-        <li><span>OP-04</span><p class="ko">응대 동선 세팅<small>문의부터 예약까지</small></p><p class="en">Front-desk flow<small>From inquiry to booking</small></p></li>
+        <li><span>OP-01</span><p class="ko">수가표·이벤트 기획<small>지역 시세와 주력 시술 기준</small></p><p class="en">Price list & launch promos<small>Local rates and key treatments</small></p><p class="ja">料金表・開院キャンペーン<small>地域相場と主力施術を基準に</small></p><p class="sc">价目表与开业活动<small>依据当地行情与主打项目</small></p><p class="tc">價目表與開業活動<small>依據當地行情與主打療程</small></p></li>
+        <li><span>OP-02</span><p class="ko">채널·계정 세팅<small>플레이스, 카카오 채널, 인스타그램, 플랫폼 입점</small></p><p class="en">Channels & accounts<small>Naver Place, Kakao, Instagram, platforms</small></p><p class="ja">チャネル・アカウント設定<small>Naver Place、カカオ、Instagram、各種プラットフォーム</small></p><p class="sc">渠道与账号设置<small>Naver Place、Kakao、Instagram、各平台入驻</small></p><p class="tc">渠道與帳號設定<small>Naver Place、Kakao、Instagram、各平台進駐</small></p></li>
+        <li><span>OP-03</span><p class="ko">원내 POP·인쇄물<small>배너, 시술 안내, 대기실 비치물</small></p><p class="en">In-clinic POP & print<small>Banners, guides, waiting room</small></p><p class="ja">院内POP・印刷物<small>バナー、施術案内、待合室ツール</small></p><p class="sc">院内POP与印刷物<small>横幅、项目介绍、候诊区物料</small></p><p class="tc">院內POP與印刷物<small>橫幅、療程介紹、候診區物料</small></p></li>
+        <li><span>OP-04</span><p class="ko">응대 동선 세팅<small>문의부터 예약까지</small></p><p class="en">Front-desk flow<small>From inquiry to booking</small></p><p class="ja">受付動線の設計<small>問い合わせから予約まで</small></p><p class="sc">接待动线设计<small>从咨询到预约</small></p><p class="tc">接待動線設計<small>從諮詢到預約</small></p></li>
       </ul></div>
     <div class="svc"><div><p class="cap" style="color:var(--grey)">WB</p><h3><em>Website</em></h3><p class="kt ko">홈페이지·랜딩</p></div>
       <ul>
-        <li><span>WB-01</span><p class="ko">병원 홈페이지 국문<small>의료진·장비·시술 구조 설계</small></p><p class="en">Korean clinic website<small>Doctors, equipment, treatments</small></p></li>
-        <li><span>WB-02</span><p class="ko">해외 버전<small>영어·일본어·중국어</small></p><p class="en">International versions<small>English, Japanese, Chinese</small></p></li>
-        <li><span>WB-03</span><p class="ko">이벤트 랜딩 페이지<small>광고 유입용 단일 페이지</small></p><p class="en">Promo landing pages<small>For ad traffic</small></p></li>
-        <li><span>WB-04</span><p class="ko">유지보수<small>시술·가격·의료진 변경 반영</small></p><p class="en">Maintenance<small>Treatments, prices, staff</small></p></li>
+        <li><span>WB-01</span><p class="ko">병원 홈페이지 국문<small>의료진·장비·시술 구조 설계</small></p><p class="en">Korean clinic website<small>Doctors, equipment, treatments</small></p><p class="ja">韓国語ウェブサイト<small>医師・機器・施術の構成設計</small></p><p class="sc">韩文官网<small>医生、设备、项目结构设计</small></p><p class="tc">韓文官網<small>醫師、設備、療程結構設計</small></p></li>
+        <li><span>WB-02</span><p class="ko">해외 버전<small>영어·일본어·중국어</small></p><p class="en">International versions<small>English, Japanese, Chinese</small></p><p class="ja">海外版サイト<small>英語・日本語・中国語</small></p><p class="sc">海外版官网<small>英文、日文、中文</small></p><p class="tc">海外版官網<small>英文、日文、中文</small></p></li>
+        <li><span>WB-03</span><p class="ko">이벤트 랜딩 페이지<small>광고 유입용 단일 페이지</small></p><p class="en">Promo landing pages<small>For ad traffic</small></p><p class="ja">キャンペーン用LP<small>広告流入向けの単一ページ</small></p><p class="sc">活动落地页<small>承接广告流量的单页</small></p><p class="tc">活動落地頁<small>承接廣告流量的單頁</small></p></li>
+        <li><span>WB-04</span><p class="ko">유지보수<small>시술·가격·의료진 변경 반영</small></p><p class="en">Maintenance<small>Treatments, prices, staff</small></p><p class="ja">保守運用<small>施術・料金・医師情報の更新</small></p><p class="sc">维护更新<small>项目、价格、医生信息变更</small></p><p class="tc">維護更新<small>療程、價格、醫師資訊變更</small></p></li>
       </ul></div>
     <div class="svc"><div><p class="cap" style="color:var(--grey)">EV</p><h3>Promotion</h3><p class="kt ko">이벤트 기획·디자인</p></div>
       <ul>
-        <li><span>EV-01</span><p class="ko">월간 이벤트 기획<small>시즌·주력 시술 기준</small></p><p class="en">Monthly promo planning<small>By season and treatment</small></p></li>
-        <li><span>EV-02</span><p class="ko">카카오 플친 메시지<small>문안과 이미지</small></p><p class="en">Kakao channel messages<small>Copy and visuals</small></p></li>
-        <li><span>EV-03</span><p class="ko">인스타그램 콘텐츠<small>피드·스토리</small></p><p class="en">Instagram content<small>Feed and stories</small></p></li>
-        <li><span>EV-04</span><p class="ko">A4 안내물·배너<small>원내 게시용</small></p><p class="en">A4 flyers & banners<small>In-clinic display</small></p></li>
+        <li><span>EV-01</span><p class="ko">월간 이벤트 기획<small>시즌·주력 시술 기준</small></p><p class="en">Monthly promo planning<small>By season and treatment</small></p><p class="ja">月間キャンペーン企画<small>季節・主力施術を基準に</small></p><p class="sc">月度活动策划<small>依据季节与主打项目</small></p><p class="tc">月度活動策劃<small>依據季節與主打療程</small></p></li>
+        <li><span>EV-02</span><p class="ko">카카오 플친 메시지<small>문안과 이미지</small></p><p class="en">Kakao channel messages<small>Copy and visuals</small></p><p class="ja">カカオチャネル配信<small>文面とビジュアル</small></p><p class="sc">Kakao频道推送<small>文案与视觉</small></p><p class="tc">Kakao頻道推播<small>文案與視覺</small></p></li>
+        <li><span>EV-03</span><p class="ko">인스타그램 콘텐츠<small>피드·스토리</small></p><p class="en">Instagram content<small>Feed and stories</small></p><p class="ja">Instagramコンテンツ<small>フィード・ストーリーズ</small></p><p class="sc">Instagram内容<small>贴文与限时动态</small></p><p class="tc">Instagram內容<small>貼文與限時動態</small></p></li>
+        <li><span>EV-04</span><p class="ko">A4 안내물·배너<small>원내 게시용</small></p><p class="en">A4 flyers & banners<small>In-clinic display</small></p><p class="ja">A4案内・バナー<small>院内掲示用</small></p><p class="sc">A4宣传单与横幅<small>院内张贴用</small></p><p class="tc">A4宣傳單與橫幅<small>院內張貼用</small></p></li>
       </ul></div>
     <div class="svc"><div><p class="cap" style="color:var(--grey)">CH</p><h3><em>Channel</em></h3><p class="kt ko">채널 운영</p></div>
       <ul>
-        <li><span>CH-01</span><p class="ko">브랜드 블로그<small>진료 철학이 드러나는 글</small></p><p class="en">Brand blog<small>Your approach to care, in writing</small></p></li>
-        <li><span>CH-02</span><p class="ko">블로그 체험단<small>모집·가이드·게시 확인</small></p><p class="en">Blog reviewer program<small>Recruit, brief, verify</small></p></li>
-        <li><span>CH-03</span><p class="ko">시술 플랫폼 광고<small>강남언니·바비톡·여신티켓 등</small></p><p class="en">Treatment platform ads<small>Gangnam Unni, Babitalk, Yeoshin Ticket</small></p></li>
-        <li><span>CH-04</span><p class="ko">온라인 평판 모니터링<small>후기·커뮤니티 정기 점검</small></p><p class="en">Reputation monitoring<small>Reviews and communities</small></p></li>
+        <li><span>CH-01</span><p class="ko">브랜드 블로그<small>진료 철학이 드러나는 글</small></p><p class="en">Brand blog<small>Your approach to care, in writing</small></p><p class="ja">ブランドブログ<small>診療哲学が伝わる記事</small></p><p class="sc">品牌博客<small>传达诊疗理念的文章</small></p><p class="tc">品牌部落格<small>傳達診療理念的文章</small></p></li>
+        <li><span>CH-02</span><p class="ko">블로그 체험단<small>모집·가이드·게시 확인</small></p><p class="en">Blog reviewer program<small>Recruit, brief, verify</small></p><p class="ja">ブログ体験レビュー<small>募集・ガイド・掲載確認まで</small></p><p class="sc">博客体验评测<small>招募、指引、发布确认</small></p><p class="tc">部落格體驗評測<small>招募、指引、發布確認</small></p></li>
+        <li><span>CH-03</span><p class="ko">시술 플랫폼 광고<small>강남언니·바비톡·여신티켓 등</small></p><p class="en">Treatment platform ads<small>Gangnam Unni, Babitalk, Yeoshin Ticket</small></p><p class="ja">施術プラットフォーム広告<small>江南オンニ、Babitalk、Yeoshin Ticketなど</small></p><p class="sc">医美平台广告<small>江南姐姐、Babitalk、Yeoshin Ticket等</small></p><p class="tc">醫美平台廣告<small>江南姐姐、Babitalk、Yeoshin Ticket等</small></p></li>
+        <li><span>CH-04</span><p class="ko">온라인 평판 모니터링<small>후기·커뮤니티 정기 점검</small></p><p class="en">Reputation monitoring<small>Reviews and communities</small></p><p class="ja">評判モニタリング<small>口コミ・コミュニティの定期点検</small></p><p class="sc">口碑监测<small>评价与社群定期检查</small></p><p class="tc">口碑監測<small>評價與社群定期檢查</small></p></li>
       </ul></div>
   </div>
-  <div class="back wrap"><h2>Your clinic,<br><em>in couture.</em></h2><a class="btn" href="#contact"><span class="ko">무료 진단 신청</span><span class="en">Book a review</span> →</a></div>
+  <div class="back wrap"><h2>Your clinic,<br><em>in couture.</em></h2><a class="btn" href="#contact"><span class="ko">무료 진단 신청</span><span class="en">Book a review</span><span class="ja">無料診断を申し込む</span><span class="sc">预约免费诊断</span><span class="tc">預約免費診斷</span> →</a></div>
 </section>
 
 <!-- ================= PROCESS ================= -->
@@ -570,16 +592,16 @@ footer .big{font-size:clamp(5rem,27vw,27rem);line-height:.78;text-align:center;m
   <div class="opener">
     <div class="txt"><p class="cap" style="color:var(--grey)">Process · Nº 02</p><h1>On<br><em>record.</em></h1>
       <p class="kr ko">첫 상담부터 월간 보고까지 다섯 단계. 모든 단계가 기록으로 남습니다.</p>
-      <p class="kr en">Five steps from first call to monthly report, every one of them on record.</p></div>
+      <p class="kr en">Five steps from first call to monthly report, every one of them on record.</p><p class="kr ja">初回相談から月次レポートまで5ステップ。すべての工程が記録に残ります。</p><p class="kr sc">从首次咨询到月度报告共五步，每一步都有记录。</p><p class="kr tc">從首次諮詢到月度報告共五步，每一步都有紀錄。</p></div>
     <div class="img"><div class="ph t-stone"><img data-src="img/11-process.jpg" alt=""></div><span class="slot">img/11-process.jpg</span></div>
   </div>
   <div class="sect wrap">
     <ol class="steps">
-      <li><span class="n">01</span><div><h3 class="ko">상담</h3><h3 class="en">Consultation</h3></div><p class="ko">위치, 주력 시술, 개원 일정, 지금 쓰는 채널을 듣습니다. 30분이면 충분합니다.</p><p class="en">Location, key treatments, timeline and current channels. Thirty minutes is enough.</p></li>
-      <li><span class="n">02</span><div><h3 class="ko">진단</h3><h3 class="en">Diagnosis</h3></div><p class="ko">홈페이지, 플레이스, 플랫폼 노출, 경쟁 병원 수가를 점검해 빈 곳을 보여드립니다.</p><p class="en">Website, Naver Place, platforms and competitor pricing, with the gaps marked.</p></li>
-      <li><span class="n">03</span><div><h3 class="ko">항목 확정·계약</h3><h3 class="en">Scope & contract</h3></div><p class="ko">필요한 항목만 코드와 수량으로 확정합니다. 이 목록이 그대로 진행 차트가 됩니다.</p><p class="en">Only what you need, by code and quantity. That list becomes your progress chart.</p></li>
-      <li><span class="n">04</span><div><h3 class="ko">실행·체크</h3><h3 class="en">Execution</h3></div><p class="ko">담당자가 항목별로 착수·진행·완료를 기록합니다. 원장님 확인이 필요한 것만 따로 여쭙니다.</p><p class="en">Each item logged as started, in progress or done. We ask only when your approval is needed.</p></li>
-      <li><span class="n">05</span><div><h3 class="ko">월간 보고</h3><h3 class="en">Monthly report</h3></div><p class="ko">계약 대비 완료 현황, 결과물 링크, 다음 달 제안을 함께 보내드립니다.</p><p class="en">Completion against contract, links to every deliverable, next month's proposal.</p></li>
+      <li><span class="n">01</span><div><h3 class="ko">상담</h3><h3 class="en">Consultation</h3><h3 class="ja">ご相談</h3><h3 class="sc">咨询</h3><h3 class="tc">諮詢</h3></div><p class="ko">위치, 주력 시술, 개원 일정, 지금 쓰는 채널을 듣습니다. 30분이면 충분합니다.</p><p class="en">Location, key treatments, timeline and current channels. Thirty minutes is enough.</p><p class="ja">立地、主力施術、開院スケジュール、現在のチャネルをお伺いします。30分で十分です。</p><p class="sc">了解地点、主打项目、开业时间与现有渠道，30分钟足矣。</p><p class="tc">了解地點、主打療程、開業時間與現有渠道，30分鐘足矣。</p></li>
+      <li><span class="n">02</span><div><h3 class="ko">진단</h3><h3 class="en">Diagnosis</h3><h3 class="ja">診断</h3><h3 class="sc">诊断</h3><h3 class="tc">診斷</h3></div><p class="ko">홈페이지, 플레이스, 플랫폼 노출, 경쟁 병원 수가를 점검해 빈 곳을 보여드립니다.</p><p class="en">Website, Naver Place, platforms and competitor pricing, with the gaps marked.</p><p class="ja">ウェブサイト、Naver Place、プラットフォーム露出、競合の料金を点検し、足りない部分をお示しします。</p><p class="sc">检查官网、Naver Place、平台曝光与竞品价格，指出空白之处。</p><p class="tc">檢查官網、Naver Place、平台曝光與競品價格，指出空白之處。</p></li>
+      <li><span class="n">03</span><div><h3 class="ko">항목 확정·계약</h3><h3 class="en">Scope & contract</h3><h3 class="ja">項目確定・契約</h3><h3 class="sc">确定项目与签约</h3><h3 class="tc">確定項目與簽約</h3></div><p class="ko">필요한 항목만 코드와 수량으로 확정합니다. 이 목록이 그대로 진행 차트가 됩니다.</p><p class="en">Only what you need, by code and quantity. That list becomes your progress chart.</p><p class="ja">必要な項目だけを、コードと数量で確定。そのリストがそのまま進捗チャートになります。</p><p class="sc">只确定所需项目的编号与数量，这份清单就是您的进度表。</p><p class="tc">只確定所需項目的編號與數量，這份清單就是您的進度表。</p></li>
+      <li><span class="n">04</span><div><h3 class="ko">실행·체크</h3><h3 class="en">Execution</h3><h3 class="ja">実行・チェック</h3><h3 class="sc">执行与检查</h3><h3 class="tc">執行與檢查</h3></div><p class="ko">담당자가 항목별로 착수·진행·완료를 기록합니다. 원장님 확인이 필요한 것만 따로 여쭙니다.</p><p class="en">Each item logged as started, in progress or done. We ask only when your approval is needed.</p><p class="ja">担当者が項目ごとに着手・進行・完了を記録します。院長の確認が必要なときだけご相談します。</p><p class="sc">负责人按项目记录开始、进行、完成，只在需要院长确认时请示。</p><p class="tc">負責人按項目記錄開始、進行、完成，只在需要院長確認時請示。</p></li>
+      <li><span class="n">05</span><div><h3 class="ko">월간 보고</h3><h3 class="en">Monthly report</h3><h3 class="ja">月次レポート</h3><h3 class="sc">月度报告</h3><h3 class="tc">月度報告</h3></div><p class="ko">계약 대비 완료 현황, 결과물 링크, 다음 달 제안을 함께 보내드립니다.</p><p class="en">Completion against contract, links to every deliverable, next month's proposal.</p><p class="ja">契約に対する完了状況、成果物リンク、翌月のご提案をお送りします。</p><p class="sc">发送对照合同的完成情况、成果链接与下月提案。</p><p class="tc">發送對照合約的完成情況、成果連結與下月提案。</p></li>
     </ol>
   </div>
 </section>
@@ -589,15 +611,15 @@ footer .big{font-size:clamp(5rem,27vw,27rem);line-height:.78;text-align:center;m
   <div class="opener">
     <div class="txt"><p class="cap" style="color:var(--grey)">Global · EN · JA · ZH</p><h1>Across<br><em>borders.</em></h1>
       <p class="kr ko">검색 언어, 쓰는 앱, 믿는 후기가 나라마다 다릅니다. 국가별 경로에 맞춰 병원을 다시 소개합니다.</p>
-      <p class="kr en">Search language, apps and trusted reviews differ by country. We reintroduce your clinic for each market.</p></div>
+      <p class="kr en">Search language, apps and trusted reviews differ by country. We reintroduce your clinic for each market.</p><p class="kr ja">検索する言語も、使うアプリも、信頼する口コミも国ごとに違います。国別の経路に合わせて、クリニックを紹介し直します。</p><p class="kr sc">搜索语言、常用App、信赖的评价因国家而异。我们按各国路径重新介绍您的诊所。</p><p class="kr tc">搜尋語言、常用App、信賴的評價因國家而異。我們按各國路徑重新介紹您的診所。</p></div>
     <div class="img"><div class="ph t-sky"><img data-src="img/12-global.jpg" alt=""></div><span class="slot">img/12-global.jpg</span></div>
   </div>
   <div class="sect wrap">
     <div class="duo">
-      <div><p class="cap" style="color:var(--grey)">GL-01</p><h3>Multilingual sites</h3><p class="kt ko">다국어 홈페이지</p><p class="ko">번역이 아니라 현지 환자가 궁금해하는 순서로 다시 씁니다. 시술명, 가격 표기, 예약 방법까지 현지 기준으로.</p><p class="en">Rewritten in the order local patients ask. Names, pricing and booking follow local norms.</p></div>
-      <div><p class="cap" style="color:var(--grey)">GL-02</p><h3><em>Overseas channels</em></h3><p class="kt ko">해외 채널 운영</p><p class="ko">국가별로 많이 쓰는 SNS와 메신저를 세팅하고, 문의가 왔을 때 응대할 흐름까지 만듭니다.</p><p class="en">The social and messaging channels each market uses, plus the flow to answer inquiries.</p></div>
-      <div><p class="cap" style="color:var(--grey)">GL-03</p><h3>Patient materials</h3><p class="kt ko">외국인 환자 응대 자료</p><p class="ko">상담지, 시술 안내, 사후 관리 안내문을 언어별로 준비합니다.</p><p class="en">Consultation forms, treatment guides and aftercare sheets in each language.</p></div>
-      <div><p class="cap" style="color:var(--grey)">GL-04</p><h3><em>One chart</em></h3><p class="kt ko">국내와 한 차트로</p><p class="ko">해외 항목도 같은 진행 차트에서 관리합니다. 국내와 해외가 따로 움직이지 않습니다.</p><p class="en">International items live in the same chart, so both sides move together.</p></div>
+      <div><p class="cap" style="color:var(--grey)">GL-01</p><h3>Multilingual sites</h3><p class="kt ko">다국어 홈페이지</p><p class="ko">번역이 아니라 현지 환자가 궁금해하는 순서로 다시 씁니다. 시술명, 가격 표기, 예약 방법까지 현지 기준으로.</p><p class="en">Rewritten in the order local patients ask. Names, pricing and booking follow local norms.</p><p class="ja">翻訳ではなく、現地の患者が知りたい順に書き直します。施術名、料金表記、予約方法まで現地基準で。</p><p class="sc">不是翻译，而是按当地患者关心的顺序重写；项目名称、价格标示、预约方式都依当地习惯。</p><p class="tc">不是翻譯，而是按當地患者關心的順序重寫；療程名稱、價格標示、預約方式都依當地習慣。</p></div>
+      <div><p class="cap" style="color:var(--grey)">GL-02</p><h3><em>Overseas channels</em></h3><p class="kt ko">해외 채널 운영</p><p class="ko">국가별로 많이 쓰는 SNS와 메신저를 세팅하고, 문의가 왔을 때 응대할 흐름까지 만듭니다.</p><p class="en">The social and messaging channels each market uses, plus the flow to answer inquiries.</p><p class="ja">国ごとに使われるSNS・メッセンジャーを設定し、問い合わせ対応の流れまでつくります。</p><p class="sc">设置各国常用的社交与通讯渠道，并建立咨询接待流程。</p><p class="tc">設定各國常用的社群與通訊渠道，並建立諮詢接待流程。</p></div>
+      <div><p class="cap" style="color:var(--grey)">GL-03</p><h3>Patient materials</h3><p class="kt ko">외국인 환자 응대 자료</p><p class="ko">상담지, 시술 안내, 사후 관리 안내문을 언어별로 준비합니다.</p><p class="en">Consultation forms, treatment guides and aftercare sheets in each language.</p><p class="ja">問診票、施術案内、アフターケア案内を言語別にご用意します。</p><p class="sc">按语言准备咨询表、项目说明与术后护理指南。</p><p class="tc">按語言準備諮詢表、療程說明與術後護理指南。</p></div>
+      <div><p class="cap" style="color:var(--grey)">GL-04</p><h3><em>One chart</em></h3><p class="kt ko">국내와 한 차트로</p><p class="ko">해외 항목도 같은 진행 차트에서 관리합니다. 국내와 해외가 따로 움직이지 않습니다.</p><p class="en">International items live in the same chart, so both sides move together.</p><p class="ja">海外項目も同じ進捗チャートで管理。国内と海外がばらばらに動きません。</p><p class="sc">海外项目也在同一张进度表中管理，国内与海外同步推进。</p><p class="tc">海外項目也在同一張進度表中管理，國內與海外同步推進。</p></div>
     </div>
   </div>
 </section>
@@ -606,7 +628,7 @@ footer .big{font-size:clamp(5rem,27vw,27rem);line-height:.78;text-align:center;m
 <section data-page="contact" hidden>
   <div class="opener" style="min-height:70svh">
     <div class="txt"><p class="cap" style="color:var(--grey)">Contact</p><h1>Tell us<br>about your <em>clinic.</em></h1>
-      <p class="kr ko">영업일 기준 하루 안에 담당자가 연락드립니다.</p><p class="kr en">A manager will reply within one business day.</p></div>
+      <p class="kr ko">영업일 기준 하루 안에 담당자가 연락드립니다.</p><p class="kr en">A manager will reply within one business day.</p><p class="kr ja">営業日1日以内に担当者よりご連絡いたします。</p><p class="kr sc">我们将在一个工作日内与您联系。</p><p class="kr tc">我們將在一個工作日內與您聯繫。</p></div>
     <div class="img"><div class="ph t-cover"><img data-src="img/13-contact.jpg" alt=""></div><span class="slot">img/13-contact.jpg</span></div>
   </div>
   <div class="sect wrap">
@@ -614,16 +636,16 @@ footer .big{font-size:clamp(5rem,27vw,27rem);line-height:.78;text-align:center;m
       <div class="info"><dl>
         <div><dt class="cap" style="color:var(--grey)">Email</dt><dd><span id="mail">info@medinc.co.kr</span><button type="button" class="copy" id="copy-mail">COPY</button></dd></div>
         <div><dt class="cap" style="color:var(--grey)">Web</dt><dd>www.medinc.co.kr</dd></div>
-        <div><dt class="cap" style="color:var(--grey)">Hours</dt><dd class="k"><span class="ko">평일 10:00 – 19:00</span><span class="en">Weekdays 10:00 – 19:00 KST</span></dd></div>
+        <div><dt class="cap" style="color:var(--grey)">Hours</dt><dd class="k"><span class="ko">평일 10:00 – 19:00</span><span class="en">Weekdays 10:00 – 19:00 KST</span><span class="ja">平日 10:00 – 19:00（韓国時間）</span><span class="sc">工作日 10:00 – 19:00（韩国时间）</span><span class="tc">工作日 10:00 – 19:00（韓國時間）</span></dd></div>
       </dl></div>
       <form id="inquiry" novalidate>
         <div class="row">
-          <label for="f-clinic"><span><span class="ko">병원명</span><span class="en">Clinic</span> *</span><input id="f-clinic" required autocomplete="organization"></label>
-          <label for="f-name"><span><span class="ko">성함·직책</span><span class="en">Name & role</span> *</span><input id="f-name" required autocomplete="name"></label>
+          <label for="f-clinic"><span><span class="ko">병원명</span><span class="en">Clinic</span><span class="ja">クリニック名</span><span class="sc">诊所名称</span><span class="tc">診所名稱</span> *</span><input id="f-clinic" required autocomplete="organization"></label>
+          <label for="f-name"><span><span class="ko">성함·직책</span><span class="en">Name & role</span><span class="ja">お名前・役職</span><span class="sc">姓名与职位</span><span class="tc">姓名與職位</span> *</span><input id="f-name" required autocomplete="name"></label>
         </div>
         <div class="row">
-          <label for="f-phone"><span><span class="ko">연락처</span><span class="en">Phone</span> *</span><input id="f-phone" type="tel" required autocomplete="tel" inputmode="tel"></label>
-          <label for="f-stage"><span class="ko">병원 상황</span><span class="en">Stage</span>
+          <label for="f-phone"><span><span class="ko">연락처</span><span class="en">Phone</span><span class="ja">電話番号</span><span class="sc">联系电话</span><span class="tc">聯絡電話</span> *</span><input id="f-phone" type="tel" required autocomplete="tel" inputmode="tel"></label>
+          <label for="f-stage"><span class="ko">병원 상황</span><span class="en">Stage</span><span class="ja">現在の状況</span><span class="sc">诊所现况</span><span class="tc">診所現況</span>
             <select id="f-stage">
               <option value="개원 예정 / Opening soon">개원 예정 · Opening soon</option>
               <option value="운영 중 / Operating">운영 중 · Operating</option>
@@ -631,22 +653,22 @@ footer .big{font-size:clamp(5rem,27vw,27rem);line-height:.78;text-align:center;m
             </select></label>
         </div>
         <div class="row">
-          <label for="f-email"><span class="ko">이메일</span><span class="en">Email</span><input id="f-email" type="email" autocomplete="email" inputmode="email"></label>
-          <label for="f-area"><span class="ko">지역</span><span class="en">Area</span><input id="f-area" placeholder="강남 신사 / Sinsa, Gangnam"></label>
+          <label for="f-email"><span class="ko">이메일</span><span class="en">Email</span><span class="ja">メール</span><span class="sc">电子邮箱</span><span class="tc">電子郵件</span><input id="f-email" type="email" autocomplete="email" inputmode="email"></label>
+          <label for="f-area"><span class="ko">지역</span><span class="en">Area</span><span class="ja">地域</span><span class="sc">地区</span><span class="tc">地區</span><input id="f-area" placeholder="강남 신사 / Sinsa, Gangnam"></label>
         </div>
         <input id="f-web" name="website" type="text" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
-        <fieldset><legend><span class="ko">관심 서비스</span><span class="en">Interested in</span></legend>
+        <fieldset><legend><span class="ko">관심 서비스</span><span class="en">Interested in</span><span class="ja">ご関心のサービス</span><span class="sc">感兴趣的服务</span><span class="tc">感興趣的服務</span></legend>
           <div class="checks">
-            <label for="c-op"><input type="checkbox" id="c-op" name="svc" value="개원 세팅 / Opening"><span class="ko">개원 세팅</span><span class="en">Opening</span></label>
-            <label for="c-wb"><input type="checkbox" id="c-wb" name="svc" value="홈페이지 / Website"><span class="ko">홈페이지</span><span class="en">Website</span></label>
-            <label for="c-ev"><input type="checkbox" id="c-ev" name="svc" value="이벤트 / Promotion"><span class="ko">이벤트·디자인</span><span class="en">Promotion</span></label>
-            <label for="c-ch"><input type="checkbox" id="c-ch" name="svc" value="채널 / Channel"><span class="ko">채널 운영</span><span class="en">Channel</span></label>
-            <label for="c-gl"><input type="checkbox" id="c-gl" name="svc" value="해외 / Global"><span class="ko">해외 마케팅</span><span class="en">Global</span></label>
+            <label for="c-op"><input type="checkbox" id="c-op" name="svc" value="개원 세팅 / Opening"><span class="ko">개원 세팅</span><span class="en">Opening</span><span class="ja">開院</span><span class="sc">开业</span><span class="tc">開業</span></label>
+            <label for="c-wb"><input type="checkbox" id="c-wb" name="svc" value="홈페이지 / Website"><span class="ko">홈페이지</span><span class="en">Website</span><span class="ja">ウェブサイト</span><span class="sc">官网</span><span class="tc">官網</span></label>
+            <label for="c-ev"><input type="checkbox" id="c-ev" name="svc" value="이벤트 / Promotion"><span class="ko">이벤트·디자인</span><span class="en">Promotion</span><span class="ja">プロモーション</span><span class="sc">活动企划</span><span class="tc">活動企劃</span></label>
+            <label for="c-ch"><input type="checkbox" id="c-ch" name="svc" value="채널 / Channel"><span class="ko">채널 운영</span><span class="en">Channel</span><span class="ja">チャネル</span><span class="sc">渠道运营</span><span class="tc">渠道經營</span></label>
+            <label for="c-gl"><input type="checkbox" id="c-gl" name="svc" value="해외 / Global"><span class="ko">해외 마케팅</span><span class="en">Global</span><span class="ja">海外</span><span class="sc">海外</span><span class="tc">海外</span></label>
           </div>
         </fieldset>
-        <label for="f-msg"><span class="ko">문의 내용</span><span class="en">Message</span><textarea id="f-msg"></textarea></label>
-        <div><button class="btn" type="submit"><span class="ko">상담 신청하기</span><span class="en">Send inquiry</span> →</button></div>
-        <div class="notice" id="notice" hidden><span class="ko" id="n-ko"></span><span class="en" id="n-en"></span><pre id="n-body"></pre><button type="button" class="copy" id="copy-body">COPY</button></div>
+        <label for="f-msg"><span class="ko">문의 내용</span><span class="en">Message</span><span class="ja">お問い合わせ内容</span><span class="sc">咨询内容</span><span class="tc">諮詢內容</span><textarea id="f-msg"></textarea></label>
+        <div><button class="btn" type="submit"><span class="ko">상담 신청하기</span><span class="en">Send inquiry</span><span class="ja">相談を申し込む</span><span class="sc">提交咨询</span><span class="tc">提交諮詢</span> →</button></div>
+        <div class="notice" id="notice" hidden><span id="n-msg"></span><pre id="n-body"></pre><button type="button" class="copy" id="copy-body">COPY</button></div>
       </form>
     </div>
   </div>
@@ -666,12 +688,13 @@ footer .big{font-size:clamp(5rem,27vw,27rem);line-height:.78;text-align:center;m
     img.addEventListener("error",function(){img.remove()});
     img.src=img.dataset.src;
   });
-  function setLang(l){root.setAttribute("data-lang",l);root.lang=l;
-    document.getElementById("lang-ko").setAttribute("aria-pressed",l==="ko");
-    document.getElementById("lang-en").setAttribute("aria-pressed",l==="en");
+  var LANGS={ko:"ko",en:"en",ja:"ja",sc:"zh-Hans",tc:"zh-Hant"};
+  function setLang(l){if(!LANGS[l])l="ko";root.setAttribute("data-lang",l);root.lang=LANGS[l];
+    document.querySelectorAll(".lang button").forEach(function(b){b.setAttribute("aria-pressed",b.dataset.set===l)});
     try{localStorage.setItem("medinc-lang",l)}catch(e){}}
   var s=null;try{s=localStorage.getItem("medinc-lang")}catch(e){}
-  setLang(s==="en"?"en":"ko");
+  if(!s){var nl=(navigator.language||"").toLowerCase();s=nl.indexOf("ja")===0?"ja":/zh-(tw|hk|mo|hant)/.test(nl)?"tc":nl.indexOf("zh")===0?"sc":nl.indexOf("ko")===0?"ko":"ko"}
+  setLang(s);
   document.querySelectorAll(".lang button").forEach(function(b){b.addEventListener("click",function(){setLang(b.dataset.set)})});
 
   var top=document.getElementById("top"),mnav=document.getElementById("mnav"),burger=document.getElementById("burger"),page="home";
@@ -715,23 +738,27 @@ footer .big{font-size:clamp(5rem,27vw,27rem);line-height:.78;text-align:center;m
   document.getElementById("copy-mail").addEventListener("click",function(e){copyTxt("info@medinc.co.kr",e.currentTarget)});
   // 문의 접수: FORM_ENDPOINT(구글 Apps Script 웹앱 주소)가 있으면 자동 접수, 없으면 메일 앱으로
   var FORM_ENDPOINT="";
+  var MSG={
+    req:{ko:"병원명, 성함, 연락처를 입력해 주세요.",en:"Please fill in clinic, name and phone.",ja:"クリニック名、お名前、電話番号をご入力ください。",sc:"请填写诊所名称、姓名与联系电话。",tc:"請填寫診所名稱、姓名與聯絡電話。"},
+    ok:{ko:"상담 신청이 접수되었습니다. 영업일 기준 하루 안에 담당자가 연락드립니다.",en:"Thank you. A manager will contact you within one business day.",ja:"ご相談を承りました。営業日1日以内に担当者よりご連絡いたします。",sc:"已收到您的咨询，我们将在一个工作日内与您联系。",tc:"已收到您的諮詢，我們將在一個工作日內與您聯繫。"},
+    fail:{ko:"자동 접수가 되지 않았습니다. 메일 앱에서 내용을 확인하고 보내주세요. 메일 앱이 열리지 않으면 아래 내용을 복사해 info@medinc.co.kr로 보내주시면 됩니다.",en:"Automatic sending failed. Please send it from your mail app, or copy the text below to info@medinc.co.kr.",ja:"自動送信できませんでした。メールアプリから送信いただくか、下記内容をコピーして info@medinc.co.kr までお送りください。",sc:"自动提交未成功。请通过邮件App发送，或复制以下内容发送至 info@medinc.co.kr。",tc:"自動提交未成功。請透過郵件App發送，或複製以下內容寄至 info@medinc.co.kr。"}};
   var form=document.getElementById("inquiry"),body="",sending=false;
   form.addEventListener("submit",function(e){e.preventDefault();if(sending)return;
-    var v=function(id){var el=document.getElementById(id);return el?el.value.trim():""},box=document.getElementById("notice"),nb=document.getElementById("n-body"),cb=document.getElementById("copy-body"),nk=document.getElementById("n-ko"),ne=document.getElementById("n-en");
-    function note(k,en,showBody){nk.textContent=k;ne.textContent=en;nb.hidden=!showBody;cb.hidden=!showBody;box.hidden=false}
+    var v=function(id){var el=document.getElementById(id);return el?el.value.trim():""},box=document.getElementById("notice"),nb=document.getElementById("n-body"),cb=document.getElementById("copy-body"),nm=document.getElementById("n-msg");
+    function note(key,showBody){var L=root.getAttribute("data-lang")||"ko";nm.textContent=(MSG[key][L]||MSG[key].en);nb.hidden=!showBody;cb.hidden=!showBody;box.hidden=false}
     if(v("f-web"))return;
     var miss=["f-clinic","f-name","f-phone"].filter(function(id){return !v(id)});
-    if(miss.length){note("병원명, 성함, 연락처를 입력해 주세요.","Please fill in clinic, name and phone.",false);document.getElementById(miss[0]).focus();return}
+    if(miss.length){note("req",false);document.getElementById(miss[0]).focus();return}
     var svc=[].slice.call(form.querySelectorAll('input[name="svc"]:checked')).map(function(i){return i.value}).join(", ")||"-";
     body="병원명: "+v("f-clinic")+"\n성함·직책: "+v("f-name")+"\n연락처: "+v("f-phone")+"\n이메일: "+(v("f-email")||"-")+"\n병원 상황: "+v("f-stage")+"\n지역: "+(v("f-area")||"-")+"\n관심 서비스: "+svc+"\n\n"+v("f-msg");
     nb.textContent=body;
-    function fallback(){note("자동 접수가 되지 않았습니다. 메일 앱에서 내용을 확인하고 보내주세요. 메일 앱이 열리지 않으면 아래 내용을 복사해 info@medinc.co.kr로 보내주시면 됩니다.","Automatic sending failed. Please send it from your mail app, or copy the text below to info@medinc.co.kr.",true);
+    function fallback(){note("fail",true);
       location.href="mailto:info@medinc.co.kr?subject="+encodeURIComponent("[홈페이지 문의] "+v("f-clinic"))+"&body="+encodeURIComponent(body)}
     if(!FORM_ENDPOINT){fallback();return}
     var data=new URLSearchParams({clinic:v("f-clinic"),name:v("f-name"),phone:v("f-phone"),email:v("f-email"),stage:v("f-stage"),area:v("f-area"),services:svc,message:v("f-msg"),lang:root.getAttribute("data-lang")||"ko",page:location.href});
     sending=true;var btn=form.querySelector('button[type="submit"]');btn.disabled=true;btn.style.opacity=".5";
     fetch(FORM_ENDPOINT,{method:"POST",mode:"no-cors",body:data}).then(function(){
-      note("상담 신청이 접수되었습니다. 영업일 기준 하루 안에 담당자가 연락드립니다.","Thank you. A manager will contact you within one business day.",false);form.reset();
+      note("ok",false);form.reset();
     },fallback).then(function(){sending=false;btn.disabled=false;btn.style.opacity=""});
   });
   document.getElementById("copy-body").addEventListener("click",function(e){copyTxt(body,e.currentTarget)});
