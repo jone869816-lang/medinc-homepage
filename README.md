@@ -28,3 +28,9 @@
 3. 함수 `testSubmit` 실행 → 권한 승인 → info@로 테스트 메일 오는지 확인
 4. 배포 → 새 배포 → 유형: 웹 앱 / 실행: 나 / 액세스: 모든 사용자 → 웹 앱 URL 복사
 5. `index.html`에서 `var FORM_ENDPOINT="";` 따옴표 안에 URL 붙여넣고 저장
+
+## 빌드 (2026-11-12~)
+원본은 저장소 밖 `v4.body.html` 한 파일이고, `python3 build.py`가 언어×페이지 25개 정적 페이지와 sitemap.xml을 만든다.
+- 주소: / , /services/ , /process/ , /global/ , /contact/ (한국어) — /en/ /ja/ /zh-cn/ /zh-tw/ 아래 같은 구조
+- 각 페이지는 해당 언어 텍스트만 담고, 제목·설명·canonical·hreflang이 따로 들어간다
+- 예전 주소(/#services 등)는 자동으로 새 주소로 넘어간다
